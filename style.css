@@ -1,0 +1,278 @@
+@charset "UTF-8";
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+* {
+  box-sizing: border-box; }
+
+html {
+  font-size: 10px;
+  font-family: Arial, Helvetica, sans-serif; }
+
+body {
+  font-size: 1.4rem; }
+  body a {
+    color: inherit;
+    text-decoration: none; }
+
+header {
+  /* Notacja skrótowa */
+  position: relative;
+  width: 100%;
+  height: 75vh;
+  color: white;
+  line-height: 3rem; }
+  header #box {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 75vh; }
+    header #box #slider {
+      position: absolute;
+      width: 100%;
+      height: 75vh; }
+      header #box #slider .slide {
+        position: absolute;
+        width: 100%;
+        height: 75vh; }
+        header #box #slider .slide #slide1 {
+          width: 100%;
+          height: 75vh;
+          position: absolute;
+          background: url("Img/img1.jpeg") center/cover no-repeat; }
+        header #box #slider .slide #slide2 {
+          width: 100%;
+          height: 75vh;
+          position: absolute;
+          background: url("Img/img2.jpeg") center/cover no-repeat; }
+        header #box #slider .slide #slide3 {
+          width: 100%;
+          height: 75vh;
+          position: absolute;
+          background: url("Img/img3.jpeg") center/cover no-repeat; }
+        header #box #slider .slide #slide4 {
+          width: 100%;
+          height: 75vh;
+          position: absolute;
+          background: url("Img/img4.jpg") center/cover no-repeat; }
+  header #prev {
+    color: coral;
+    position: absolute;
+    font-size: 6rem;
+    z-index: 3;
+    top: 50%;
+    left: 2rem;
+    display: none; }
+  header #next {
+    color: coral;
+    position: absolute;
+    font-size: 6rem;
+    z-index: 3;
+    top: 50%;
+    right: 2rem; }
+  header #przeslona {
+    background-color: rgba(186, 178, 178, 0.21);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1; }
+  header h1 {
+    top: 50%;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    position: absolute;
+    z-index: 2;
+    text-align: center;
+    letter-spacing: 0.3rem;
+    word-spacing: 0.4rem;
+    width: 100%; }
+  header p, header .button {
+    display: none; }
+
+nav {
+  position: static; }
+  nav ul li a {
+    display: block;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    letter-spacing: 0.2rem;
+    background-color: coral;
+    border-bottom: 2px solid gold;
+    color: whitesmoke; }
+
+section {
+  padding: 2rem;
+  margin-top: 4rem;
+  min-height: 300px; }
+  section:nth-of-type(even) {
+    background: url(Img/tlo_section.jpeg) center/cover no-repeat;
+    background-attachment: fixed;
+    color: white; }
+  section .container {
+    width: 80%;
+    margin: 0 auto; }
+    section .container h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2.5rem; }
+    section .container p {
+      margin-bottom: 2rem;
+      line-height: 2.5rem; }
+
+#to_top {
+  display: none;
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  width: 40px;
+  background-color: darkslategray;
+  height: 40px;
+  border: 1px solid black;
+  border-radius: 10px; }
+  #to_top a {
+    display: block;
+    padding-top: 10px;
+    padding-left: 14px;
+    color: white;
+    font-size: 25px; }
+
+footer {
+  padding-top: 1rem;
+  padding-bottom: 4rem; }
+  footer .container {
+    width: 80%;
+    margin: 0 auto; }
+    footer .container .sprites_media {
+      background: url("Img/sprites_spolecznosciowe.png");
+      display: inline-block;
+      width: 43px;
+      height: 43px;
+      float: right; }
+    footer .container div.facebook {
+      background-position: 1px 0px;
+      transition: all 0.25s linear; }
+    footer .container div.facebook:hover {
+      background-position: 1px -43px; }
+    footer .container div.twitter {
+      background-position: -51px 0px;
+      transition: all 0.25s linear; }
+    footer .container div.twitter:hover {
+      background-position: -51px -43px; }
+    footer .container div.youtube {
+      background-position: -103px 0px;
+      transition: all 0.25s linear; }
+    footer .container div.youtube:hover {
+      background-position: -103px -43px; }
+    footer .container div.in {
+      background-position: -155px 0px;
+      transition: all 0.25s linear; }
+    footer .container div.in:hover {
+      background-position: -155px -43px; }
+
+@media (min-width: 618px) {
+  header h1 {
+    top: 25%; }
+  header p {
+    position: absolute;
+    position: absolute;
+    z-index: 2;
+    text-align: center;
+    letter-spacing: 0.3rem;
+    word-spacing: 0.4rem;
+    width: 100%;
+    display: inline;
+    top: 40%;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    overflow: inherit;
+    margin: 0 auto;
+    padding: 0 7rem; }
+
+  nav {
+    position: sticky;
+    top: 0;
+    left: 0; }
+    nav ul li a {
+      float: left;
+      width: 25%;
+      padding: 1.5rem 0rem;
+      transition: all 1s ease;
+      border-right: dotted;
+      border-right-color: whitesmoke;
+      border-right-width: 0.06rem; }
+      nav ul li a:hover {
+        background-color: #2f2f2f;
+        border-bottom: 2px solid #000000; } }
+@media (min-width: 1154px) {
+  header {
+    height: 75vh; }
+    header p {
+      line-height: 3rem;
+      font-size: 2rem; }
+    header .button {
+      position: absolute;
+      z-index: 2;
+      text-align: center;
+      letter-spacing: 0.3rem;
+      word-spacing: 0.4rem;
+      width: 100%;
+      display: block;
+      width: 200px;
+      top: 75%;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      border: 0.5px solid #fff;
+      border-radius: 4px;
+      padding: 1rem;
+      font-size: 1.8rem;
+      transition: all 0.5s ease;
+      box-shadow: 0px 0px 15px 2.5px #fff;
+      background: -webkit-linear-gradient(gold, crimson);
+      background: -o-linear-gradient(gold, crimson);
+      background: linear-gradient(gold, crimson); }
+      header .button:hover {
+        background-color: rgba(34, 34, 162, 0.73);
+        box-shadow: 0px 0px 10px 2.5px #fff; } }

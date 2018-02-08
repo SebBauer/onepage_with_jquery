@@ -1,0 +1,21 @@
+@mixin sizes($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin h1_mobile_and_p_media {
+    position: absolute;
+    z-index: 2;
+    text-align: center;
+    letter-spacing: 0.3rem;
+    word-spacing: 0.4rem;
+    width: 100%;
+}
+
+@mixin top($top) {
+    top: $top;
+}
+
+@mixin width($width) {
+    width: $width;
+}

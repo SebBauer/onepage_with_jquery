@@ -1,0 +1,294 @@
+@import 'Reset';
+@import 'Variables';
+@import 'Mixins';
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    font-size: 1.4rem;
+    a {
+    color: inherit;
+    text-decoration: none;
+}
+}
+
+header {
+    /* Notacja skrótowa */
+    position: relative;
+    @include sizes(100%, 75vh);
+    color: white;
+    line-height: 3rem;
+
+    #box{  
+        position: relative;
+        overflow: hidden;
+        @include sizes(100%, 75vh); 
+    #slider {
+        position: absolute;
+        @include sizes(100%, 75vh);
+        
+        .slide {
+        position: absolute;
+        @include sizes(100%, 75vh);   
+            #slide1 {
+                @include sizes(100%, 75vh);
+                position: absolute; 
+                background: url('Img/img1.jpeg') center/cover no-repeat;        
+            }
+            
+            #slide2 {
+                @include sizes(100%, 75vh);
+                position: absolute; 
+                background: url('Img/img2.jpeg') center/cover no-repeat;        
+            }
+            
+            #slide3 {
+                @include sizes(100%, 75vh);
+                position: absolute; 
+                background: url('Img/img3.jpeg') center/cover no-repeat;        
+            }
+            
+            #slide4 {
+                @include sizes(100%, 75vh);
+                position: absolute; 
+                background: url('Img/img4.jpg') center/cover no-repeat;        
+            }
+            
+            
+        
+        }
+        
+    
+        
+    }
+   }
+    #prev {
+        color: coral;
+        position: absolute;
+        font-size: 6rem;
+        z-index: 3;
+        top: 50%;
+        left: 2rem;
+        display: none;
+    }
+    
+    #next {
+        color: coral;
+        position: absolute;
+        font-size: 6rem;
+        z-index: 3;
+        top: 50%;
+        right: 2rem;
+    }
+    #przeslona {
+    background-color: rgba(186, 178, 178, 0.21);
+    position: absolute;
+    @include sizes(100%, 100%);
+    top: 0;
+    left: 0;
+    z-index: 1;
+    }
+    
+    h1 {
+    @include top(50%);
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    @include h1_mobile_and_p_media;
+    }
+    
+    p, .button {
+        display: none;
+    }
+}
+
+nav {
+    position: static;
+    ul {
+        li {
+            a {
+                display: block;
+                text-align: center;
+                padding: 1.5rem;
+                font-size: 1.5rem;
+                letter-spacing: 0.2rem;
+                background-color: coral;
+                border-bottom: 2px solid gold;
+                color: whitesmoke;
+            }
+        }
+    }
+}
+
+section {
+    padding: 2rem;
+    margin-top: 4rem;
+    min-height: 300px;
+    
+        &:nth-of-type(even) {
+        background: url(Img/tlo_section.jpeg) center/cover no-repeat;
+        background-attachment: fixed;
+        color: white;    
+        }
+    
+    .container {
+    width: 80%;
+    margin: $margin_center;
+        
+        h2 {
+        font-size: 2.5rem;
+        margin-bottom: 2.5rem;    
+        }
+        
+        p {
+        margin-bottom: 2rem;
+        line-height: 2.5rem;    
+        }
+    }
+    
+}
+
+#to_top{
+    display: none;
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    width: 40px;
+    background-color: darkslategray;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 10px;
+    a{
+        display: block;
+        padding-top: 10px;
+        padding-left: 14px;
+        color: white;
+        font-size: 25px;
+        
+    }
+}
+
+
+footer {
+    padding-top: 1rem;
+    padding-bottom: 4rem;
+    
+   .container {
+    @include width(80%);
+    margin: $margin_center;
+    
+       .sprites_media {
+        background: url('Img/sprites_spolecznosciowe.png');
+        display: inline-block;
+        @include width(43px);
+        height: 43px;
+        float: right;   
+       }
+       
+    @each $media_name in $sprites_media_name {
+        div.#{$media_name} {
+            background-position: $background_position_x $background_position_y;
+            transition: $transition;
+        }
+        
+        div.#{$media_name} {
+        &:hover {
+            background-position: $background_position_x -43px;
+            }
+    }
+        
+    $background_position_x: $background_position_x - 52px;
+    $background_position_y: 0px;  
+        
+   }
+}
+}
+
+@media (min-width: 618px) {
+    header {   
+        
+            h1 {
+            @include top(25%);
+            }
+        
+            p{
+                position: absolute;
+            @include h1_mobile_and_p_media;
+            display: inline;
+            @include top(40%);
+            font-size: 1.5rem;
+            line-height: 2.5rem;
+            overflow: inherit;
+            margin: 0 auto;
+            padding: 0 7rem;
+            }
+            
+            
+    }
+    
+    nav {
+    position: sticky;
+    @include top(0);
+    left: 0;
+        ul {
+            li {
+                a {
+                    float: left;
+                    @include width(25%);
+                    padding: 1.5rem 0rem;
+                    transition: all 1s ease;
+                    border: {
+                        right: dotted;
+                        right-color: whitesmoke;
+                        right-width: 0.06rem;
+                    }
+                    
+                    &:hover {
+                    background-color: #2f2f2f;
+                    border-bottom: 2px solid #000000;    
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1154px) {
+    header{
+            height: 75vh; 
+        p {
+            line-height: 3rem;
+            font-size: 2rem;
+        }
+        .button {
+            @include h1_mobile_and_p_media;
+            display: block;
+            @include width(200px);
+            @include top(75%);
+            left: 0;
+            right: 0;
+            margin: $margin_center;
+            border: 0.5px solid #fff;
+            border-radius: 4px;
+            padding: 1rem;
+            font-size: 1.8rem;
+            transition: all 0.5s ease;
+            box-shadow: 0px 0px 15px 2.5px #fff;
+            background: -webkit-linear-gradient(gold, crimson);
+            background: -o-linear-gradient(gold, crimson);
+            background: linear-gradient(gold, crimson);
+                
+                &:hover {
+                background-color: rgba(34, 34, 162, 0.73);
+                box-shadow: 0px 0px 10px 2.5px #fff;    
+                }
+            }
+        
+        }
+}
